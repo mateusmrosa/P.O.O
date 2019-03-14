@@ -36,6 +36,11 @@ namespace MediaAluno
 
             Console.WriteLine("A média do " + aluno.Nome + " é: " + aluno.VerificaMedia());
 
+            if (aluno.VerificaMedia() >= 6)
+                Console.WriteLine("Aluno esta aprovado");
+            else
+                Console.WriteLine("Aluno ficou de exame");
+
             Console.ReadKey();
         }
     }
