@@ -4,22 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaquinaCafe
+namespace CriarMaquinaDeCafe
 {
     class MaquinaCafe
     {
+        //atributos/propriedades
         private double _valorCafe;
         private double _qtdeCafeVendidos;
         private double _valorInserido;
         private double _valorTroco;
 
+        //get/set
         public double ValorCafe { get => _valorCafe; set => _valorCafe = value; }
         public double QtdeCafeVendidos { get => _qtdeCafeVendidos; set => _qtdeCafeVendidos = value; }
         public double ValorInserido { get => _valorInserido; set => _valorInserido = value; }
         public double ValorTroco { get => _valorTroco; set => _valorTroco = value; }
 
+        //métodos
 
-        public void inserirMoeda(double valorInserido)
+        public void InserirMoeda(double valorInserido)
         {
             valorInserido++;
         }
@@ -29,16 +32,21 @@ namespace MaquinaCafe
             return;
         }
 
-        public double pegarTroco(double valorTroco)
+        public double getValorCafe()
         {
-            valorTroco = ValorInserido - _valorCafe;
-            return valorTroco;
+            return ValorCafe;
+        }
+
+        public double pegarTroco(double valorCafe, double valorInserido)
+        {
+            return _valorTroco = valorInserido - ValorCafe;
         }
 
         public void reiniciarVenda()
         {
-
+            _valorCafe = 0;
         }
+
 
         //public int getQtdeCafesVendidos()
         //{
@@ -55,19 +63,19 @@ namespace MaquinaCafe
             return valorCafe;
         }
 
-        public bool iniciaMaquina(double valorCafe)
-        {
-            return true;
-        }
+
 
         public double retornaTotalVendido(double qtdeCafeVendidos)
         {
             return qtdeCafeVendidos;
         }
-
-        public double getValorCafe()
-        {
-            return ValorCafe;
-        }
     }
 }
+
+
+
+
+
+
+
+        
